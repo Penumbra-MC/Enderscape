@@ -6,7 +6,6 @@
         "AnvilMenuMixin",
         "RecipeCategoryMixin",
         "block.BlockBehaviourMixin",
-        "block.BlockEntityTypeMixin",
         "block.BlockMixin",
         "block.CampfireBlockEntityMixin",
         "block.CampfireBlockMixin",

@@ -3,10 +3,12 @@ package net.penumbra.enderscape;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.TheEndBiomes;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,6 +17,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.EntityBlock;
 import net.penumbra.enderscape.config.EnderscapeConfig;
 import net.penumbra.enderscape.manager.StructureMusicManager;
 import net.penumbra.enderscape.registry.EnderscapeIntegration;
@@ -138,6 +141,18 @@ public class Enderscape implements ModInitializer {
         });
 
         LOGGER.info("Enderscape initialized!");
+
+        if (IS_DEBUG) {
+
+            // Quick test for block entities being valid
+            ServerLifecycleEvents.SERVER_STARTED.register(_ -> {
+                for (var block : BuiltInRegistries.BLOCK) {
+                    if (block instanceof EntityBlock entityBlock) {
+                        entityBlock.newBlockEntity(BlockPos.ZERO, block.defaultBlockState());
+                    }
+                }
+            });
+        }
     }
 
     private static void registerBuiltInPack(Identifier name, ModContainer container, boolean config) {
