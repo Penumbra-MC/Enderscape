@@ -6,6 +6,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.penumbra.enderscape.block.EndHavenCoreBlockEntity;
 import net.penumbra.enderscape.block.MagniaRadioBlockEntity;
 import net.penumbra.enderscape.block.MagniaSproutBlockEntity;
@@ -21,29 +22,29 @@ public class EnderscapeBlockEntities {
     }
 
     static {
-        BlockEntityType.CAMPFIRE.addValidBlock(EnderscapeBlocks.VOID_CAMPFIRE);
-        BlockEntityType.TRIAL_SPAWNER.addValidBlock(EnderscapeBlocks.END_TRIAL_SPAWNER);
-        BlockEntityType.VAULT.addValidBlock(EnderscapeBlocks.END_VAULT);
+        BlockEntityTypes.CAMPFIRE.addValidBlock(EnderscapeBlocks.VOID_CAMPFIRE);
+        BlockEntityTypes.TRIAL_SPAWNER.addValidBlock(EnderscapeBlocks.END_TRIAL_SPAWNER);
+        BlockEntityTypes.VAULT.addValidBlock(EnderscapeBlocks.END_VAULT);
 
         // Shelves
-        BlockEntityType.SHELF.addValidBlock(EnderscapeBlocks.CELESTIAL_SHELF);
-        BlockEntityType.SHELF.addValidBlock(EnderscapeBlocks.MURUBLIGHT_SHELF);
-        BlockEntityType.SHELF.addValidBlock(EnderscapeBlocks.VEILED_SHELF);
+        BlockEntityTypes.SHELF.addValidBlock(EnderscapeBlocks.CELESTIAL_SHELF);
+        BlockEntityTypes.SHELF.addValidBlock(EnderscapeBlocks.MURUBLIGHT_SHELF);
+        BlockEntityTypes.SHELF.addValidBlock(EnderscapeBlocks.VEILED_SHELF);
 
         // Signs
-        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_SIGN);
-        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_WALL_SIGN);
-        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_SIGN);
-        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_WALL_SIGN);
-        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.VEILED_SIGN);
-        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.VEILED_WALL_SIGN);
+        BlockEntityTypes.SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_SIGN);
+        BlockEntityTypes.SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_WALL_SIGN);
+        BlockEntityTypes.SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_SIGN);
+        BlockEntityTypes.SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_WALL_SIGN);
+        BlockEntityTypes.SIGN.addValidBlock(EnderscapeBlocks.VEILED_SIGN);
+        BlockEntityTypes.SIGN.addValidBlock(EnderscapeBlocks.VEILED_WALL_SIGN);
 
         // Hanging Signs
-        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_HANGING_SIGN);
-        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_WALL_HANGING_SIGN);
-        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_HANGING_SIGN);
-        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_WALL_HANGING_SIGN);
-        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.VEILED_HANGING_SIGN);
-        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.VEILED_WALL_HANGING_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_HANGING_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_WALL_HANGING_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_HANGING_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_WALL_HANGING_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EnderscapeBlocks.VEILED_HANGING_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EnderscapeBlocks.VEILED_WALL_HANGING_SIGN);
     }
 }
