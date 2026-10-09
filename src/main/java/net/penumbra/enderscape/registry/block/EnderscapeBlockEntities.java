@@ -19,4 +19,31 @@ public class EnderscapeBlockEntities {
     public static <T extends BlockEntity, B extends BlockEntityType<T>> B register(ResourceKey<BlockEntityType<?>> key, B type) {
         return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, key, type);
     }
+
+    static {
+        BlockEntityType.CAMPFIRE.addValidBlock(EnderscapeBlocks.VOID_CAMPFIRE);
+        BlockEntityType.TRIAL_SPAWNER.addValidBlock(EnderscapeBlocks.END_TRIAL_SPAWNER);
+        BlockEntityType.VAULT.addValidBlock(EnderscapeBlocks.END_VAULT);
+
+        // Shelves
+        BlockEntityType.SHELF.addValidBlock(EnderscapeBlocks.CELESTIAL_SHELF);
+        BlockEntityType.SHELF.addValidBlock(EnderscapeBlocks.MURUBLIGHT_SHELF);
+        BlockEntityType.SHELF.addValidBlock(EnderscapeBlocks.VEILED_SHELF);
+
+        // Signs
+        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_SIGN);
+        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_WALL_SIGN);
+        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_SIGN);
+        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_WALL_SIGN);
+        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.VEILED_SIGN);
+        BlockEntityType.SIGN.addValidBlock(EnderscapeBlocks.VEILED_WALL_SIGN);
+
+        // Hanging Signs
+        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_HANGING_SIGN);
+        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.CELESTIAL_WALL_HANGING_SIGN);
+        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_HANGING_SIGN);
+        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.MURUBLIGHT_WALL_HANGING_SIGN);
+        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.VEILED_HANGING_SIGN);
+        BlockEntityType.HANGING_SIGN.addValidBlock(EnderscapeBlocks.VEILED_WALL_HANGING_SIGN);
+    }
 }
