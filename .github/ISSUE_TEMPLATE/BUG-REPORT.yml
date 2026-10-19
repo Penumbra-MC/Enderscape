@@ -3,28 +3,29 @@ description: File a bug report.
 labels: ["⚠️ bug"]
 type: bug
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > We only accept issues for Enderscape running on [Fabric](https://github.com/Penumbra-MC/Enderscape/wiki/FAQ).
   - type: textarea
     id: description
     attributes:
       label: Description
-    validations:
-      required: true
-  - type: dropdown
-    id: modloader
-    attributes:
-      label: Mod Loader
-      options:
-        - Fabric
-      default: 0
+      description: |
+        Explain the issue in detail, including what you expected to happen.
+        Do not use the description to upload your crash report or game log.
     validations:
       required: true
   - type: dropdown
     id: minecraftversion
     attributes:
       label: Minecraft Version
+      description: We currently only support these versions, and may close your issue if you are using another.
       options:
-        - 1.21.10
-        - 1.21.11
+        - "26.1"
+        - "26.2"
+        - "26.3"
       default: 0
     validations:
       required: true
@@ -32,10 +33,14 @@ body:
     id: enderscapeversion
     attributes:
       label: Enderscape Version
+      description: Make sure you are using the most recent version of Enderscape and its dependencies.
+      placeholder: "3.1.0"
     validations:
       required: true
   - type: textarea
     id: logs
     attributes:
       label: Game Log / Crash Report
-      render: shell
+      description: |
+        These are found in your Minecraft directory.
+        Upload yours to [mclo.gs](https://mclo.gs/) and paste the link here.
