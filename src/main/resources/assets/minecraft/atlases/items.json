@@ -1,19 +1,19 @@
 {
     "sources": [
         {
-            "type": "minecraft:directory",
-            "prefix": "item/",
-            "source": "item"
-        },
-        {
             "type": "minecraft:paletted_permutations",
-            "palette_key": "minecraft:trims/color_palettes/trim_palette",
+            "palette_key": "minecraft:trim_base",
             "permutations": {
-                "nebulite": "enderscape:trims/color_palettes/nebulite",
-                "shadoline": "enderscape:trims/color_palettes/shadoline",
-                "shadoline_lighter": "enderscape:trims/color_palettes/shadoline_lighter"
+                "nebulite": "enderscape:trim/nebulite",
+                "shadoline": "enderscape:trim/shadoline",
+                "shadoline_lighter": "enderscape:trim/shadoline_lighter"
             },
-            "textures": []
+            "textures": [
+                "minecraft:trims/items/helmet_trim",
+                "minecraft:trims/items/chestplate_trim",
+                "minecraft:trims/items/leggings_trim",
+                "minecraft:trims/items/boots_trim"
+            ]
         }
     ]
 }
