@@ -132,18 +132,18 @@ public interface RandomlyPurifiesEntities {
 
     default void purifyAnimateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (PurifyingPhase.charging(state)) {
-            playClientsideChargingParticle(level, pos, random);
+            playClientsideChargingParticle(state, level, pos, random);
         } else if (PurifyingPhase.active(state) && random.nextFloat() <= 0.25F) {
-            playActivatedClientsideEffects(level, pos, random);
+            playActivatedClientsideEffects(state, level, pos, random);
         }
     }
 
-    default void playActivatedClientsideEffects(Level level, BlockPos pos, RandomSource random) {
-        playClientsideActivatedParticle(level, pos, random);
-        playClientsideActivatedSound(level, pos);
+    default void playActivatedClientsideEffects(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        playClientsideActivatedParticle(state, level, pos, random);
+        playClientsideActivatedSound(state, level, pos);
     }
 
-    default void playClientsideChargingParticle(Level level, BlockPos pos, RandomSource random) {
+    default void playClientsideChargingParticle(BlockState state, Level level, BlockPos pos, RandomSource random) {
         Vec3 center = Vec3.atCenterOf(pos);
 
         double maxOffset = 0.8;
@@ -159,7 +159,7 @@ public interface RandomlyPurifiesEntities {
         level.addParticle(GlowParticleOptions.CHARGING, position.x(), position.y(), position.z(), xd, -0.125, zd);
     }
 
-    default void playClientsideActivatedParticle(Level level, BlockPos pos, RandomSource random) {
+    default void playClientsideActivatedParticle(BlockState state, Level level, BlockPos pos, RandomSource random) {
         Vec3 center = Vec3.atCenterOf(pos);
 
         double maxOffset = 0.2;
@@ -176,7 +176,7 @@ public interface RandomlyPurifiesEntities {
         level.addParticle(GlowParticleOptions.DEFAULT, position.x(), position.y(), position.z(), xd, yd, zd);
     }
 
-    default void playClientsideActivatedSound(Level level, BlockPos pos) {
+    default void playClientsideActivatedSound(BlockState state, Level level, BlockPos pos) {
         Vec3 center = Vec3.atCenterOf(pos);
         level.playLocalSound(center.x(), center.y(), center.z(), sparkSound(), SoundSource.BLOCKS, 1.0F, 1.0F, true);
     }

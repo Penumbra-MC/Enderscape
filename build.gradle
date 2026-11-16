@@ -173,6 +173,8 @@ publishMods {
 	type = project.mod_version.contains("-") ? BETA : STABLE
 	file = jar.archiveFile
 	modLoaders.add("fabric")
+	version = "${mod_version}+mc${minecraft_version}"
+	displayName = "Enderscape ${mod_version} for ${minecraft_version}"
 
 	if (System.getenv("CURSEFORGE")) {
 		curseforge {
