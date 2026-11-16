@@ -98,8 +98,7 @@ public class BulbLanternBlock extends LanternBlock implements RandomlyPurifiesEn
     }
 
     @Override
-    public void playClientsideActivatedParticle(Level level, BlockPos pos, RandomSource random) {
-        BlockState state = level.getBlockState(pos);
+    public void playClientsideActivatedParticle(BlockState state, Level level, BlockPos pos, RandomSource random) {
         Vec3 center = Vec3.atCenterOf(pos);
 
         double maxOffset = 0.2;
